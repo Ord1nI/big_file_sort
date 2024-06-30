@@ -1,6 +1,7 @@
 #include "big_file_sort.h"
 
 
+//compare strings by the begining
 int str_cmp_by_begining(const void * a, const void * b) {
     char* arg1 = *(char **)a;
     char* arg2 = *(char **)b;
@@ -32,6 +33,7 @@ int str_cmp_by_begining(const void * a, const void * b) {
     return (0);
 }
 
+//compare strings by the end
 int str_cmp_by_end(const void * a, const void * b) {
     char* arg1 = *(char **)a;
     char* arg2 = *(char **)b;
@@ -64,6 +66,7 @@ int str_cmp_by_end(const void * a, const void * b) {
     return (0);
 }
 
+//parse text by lines
 size_t parse_to_lines(struct text_by_lines *text_by_lines, struct text * text) {
     char ** temp_text_by_lines = text_by_lines->text_by_lines;
     size_t i =0;
@@ -78,6 +81,7 @@ size_t parse_to_lines(struct text_by_lines *text_by_lines, struct text * text) {
     return i;
 }
 
+//function get file size
 off_t file_len(char * file_name) {
     struct stat st;
     stat(file_name, &st);

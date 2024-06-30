@@ -1,7 +1,7 @@
 #include "my_qsort.h"
 
 
-
+//function swap content of 2 void pointers
 static void swap(void * a, void* b, size_t size) {
     if (a == b)
         return;
@@ -11,6 +11,7 @@ static void swap(void * a, void* b, size_t size) {
     memcpy(b, temp, size);
 }
 
+//function to find middle value from 3 void pointers and compare function
 static void * optimal_pivit(void * a, void * b, void * c, comp cmp) {
     if ((cmp(a,b) >= 0 && cmp(a,c) <= 0) || (cmp(a,b) <= 0 && cmp(a,c) >= 0))
         return a;
@@ -19,11 +20,12 @@ static void * optimal_pivit(void * a, void * b, void * c, comp cmp) {
     return c;
 }
 
+//help funciton
 static void * small_sort(void * start, void * end, size_t size, comp cmp) {
 
     void * pivit = optimal_pivit(start,
                                  end,
-                                 start + ((end-start)/size/2)*size,
+                                 start + ((end-start)/size>>1)*size,
                                  cmp);
 
     swap(pivit, end, size);
@@ -44,7 +46,7 @@ static void * small_sort(void * start, void * end, size_t size, comp cmp) {
     swap(start,pivit,size);
     return(start);
 }
-
+//main function
 static void _qsort(void* start, void* end, size_t size, comp cmp) {
     if (start < end) {
         void * part = small_sort(start, end, size, cmp);

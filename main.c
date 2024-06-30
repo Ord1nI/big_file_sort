@@ -21,12 +21,11 @@ int main() {
 
     //Parse text to array of lines and
     //Delete empty lines
-    //Delete spaces in the begining of the line
-    //Get lines in modify text
+    //Update lines count
     text_by_lines.lines = parse_to_lines(&text_by_lines, &text);
 
     //Sort by begining
-    qsort(text_by_lines.text_by_lines, text_by_lines.lines, sizeof(char*), str_cmp_by_begining);
+    my_qsort(text_by_lines.text_by_lines, text_by_lines.lines, sizeof(char*), str_cmp_by_begining);
 
     //Write to output file
     FILE * out = fopen("Out.txt","w");
@@ -34,7 +33,7 @@ int main() {
 
 
     //Sort by end
-    qsort(text_by_lines.text_by_lines, text_by_lines.lines, sizeof(char*), str_cmp_by_end);
+    my_qsort(text_by_lines.text_by_lines, text_by_lines.lines, sizeof(char*), str_cmp_by_end);
 
     write_to_file(&text_by_lines, out);
 
