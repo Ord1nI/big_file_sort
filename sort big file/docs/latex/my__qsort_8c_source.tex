@@ -1,0 +1,62 @@
+\doxysection{my\+\_\+qsort.\+c}
+\hypertarget{my__qsort_8c_source}{}\label{my__qsort_8c_source}\mbox{\hyperlink{my__qsort_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{my__qsort_8h}{my\_qsort.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00005}00005\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ swap(\textcolor{keywordtype}{void}\ *\ a,\ \textcolor{keywordtype}{void}*\ b,\ \textcolor{keywordtype}{size\_t}\ size)\ \{}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00006}00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ ==\ b)}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00007}00007\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00008}00008\ \ \ \ \ \textcolor{keywordtype}{void}\ *\ temp\ =\ malloc(size);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00009}00009\ \ \ \ \ memcpy(temp,\ a,\ size);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00010}00010\ \ \ \ \ memcpy(a,\ b,\ size);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00011}00011\ \ \ \ \ memcpy(b,\ temp,\ size);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00015}00015\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ *\ optimal\_pivit(\textcolor{keywordtype}{void}\ *\ a,\ \textcolor{keywordtype}{void}\ *\ b,\ \textcolor{keywordtype}{void}\ *\ c,\ \mbox{\hyperlink{my__qsort_8h_ae754523ea11b02dcc5731cd5e7a56416}{comp}}\ cmp)\ \{}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}\ ((cmp(a,b)\ >=\ 0\ \&\&\ cmp(a,c)\ <=\ 0)\ ||\ (cmp(a,b)\ <=\ 0\ \&\&\ cmp(a,c)\ >=\ 0))}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((cmp(b,a)\ >=\ 0\ \&\&\ cmp(b,c)\ <=\ 0)\ ||\ (cmp(b,a)\ <=\ 0\ \&\&\ cmp(b,c)\ >=0\ ))}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00024}00024\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ *\ small\_sort(\textcolor{keywordtype}{void}\ *\ start,\ \textcolor{keywordtype}{void}\ *\ end,\ \textcolor{keywordtype}{size\_t}\ size,\ \mbox{\hyperlink{my__qsort_8h_ae754523ea11b02dcc5731cd5e7a56416}{comp}}\ cmp)\ \{}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ *\ pivit\ =\ optimal\_pivit(start,}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end,}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start\ +\ ((end-\/start)/size>>1)*size,}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cmp);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00031}00031\ \ \ \ \ swap(pivit,\ end,\ size);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00032}00032\ \ \ \ \ pivit\ =\ end;}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00033}00033\ \ \ \ \ end-\/=size;}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{while}(start\ <\ end)\ \{}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(cmp(start,\ pivit)\ <=\ 0\ \&\&\ start\ <\ end)}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ start+=size;}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(cmp(end,\ pivit)\ >\ 0\ \&\&\ start\ <\ end)}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ end-\/=size;}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ swap(start,end,size);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00046}00046\ \ \ \ \ swap(start,pivit,size);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{return}(start);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00050}00050\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_qsort(\textcolor{keywordtype}{void}*\ start,\ \textcolor{keywordtype}{void}*\ end,\ \textcolor{keywordtype}{size\_t}\ size,\ \mbox{\hyperlink{my__qsort_8h_ae754523ea11b02dcc5731cd5e7a56416}{comp}}\ cmp)\ \{}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (start\ <\ end)\ \{}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *\ part\ =\ small\_sort(start,\ end,\ size,\ cmp);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ \_qsort(start,\ part-\/size,\ size,\ cmp);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ \_qsort(part+size,\ end,\ size,\ cmp);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00060}\mbox{\hyperlink{my__qsort_8c_aaf697c43f3433cd790477431b57ab6f2}{00060}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{my__qsort_8c_aaf697c43f3433cd790477431b57ab6f2}{my\_qsort}}(\textcolor{keywordtype}{void}\ *\ ptr,\ \textcolor{keywordtype}{size\_t}\ count,\ \textcolor{keywordtype}{size\_t}\ size,\ \mbox{\hyperlink{my__qsort_8h_ae754523ea11b02dcc5731cd5e7a56416}{comp}}\ cmp)\ \{}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00061}00061\ \ \ \ \ \_qsort(ptr,\ ptr\ +\ ((count-\/1)\ *\ size),\ size,\ cmp);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8c_source_l00062}00062\ \}}
+
+\end{DoxyCode}

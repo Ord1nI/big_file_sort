@@ -1,0 +1,30 @@
+\doxysection{my\+\_\+qsort.\+h}
+\hypertarget{my__qsort_8h_source}{}\label{my__qsort_8h_source}\mbox{\hyperlink{my__qsort_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ MY\_Q\_SORT\_H}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ MY\_Q\_SORT\_H}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00007}00007\ \textcolor{preprocessor}{\#ifndef\ \_\_COMPAR\_FN\_T}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00008}\mbox{\hyperlink{my__qsort_8h_a5b01b59ed3d085062320df3589722d37}{00008}}\ \textcolor{preprocessor}{\#\ define\ \_\_COMPAR\_FN\_T}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00010}\mbox{\hyperlink{my__qsort_8h_ae754523ea11b02dcc5731cd5e7a56416}{00010}}\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{my__qsort_8h_ae754523ea11b02dcc5731cd5e7a56416}{comp}})\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00012}00012\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\_\_COMPAR\_FN\_T}}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00014}00014\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ *\ optimal\_pivit(\textcolor{keywordtype}{void}\ *\ a,\ \textcolor{keywordtype}{void}\ *\ b,\ \textcolor{keywordtype}{void}\ *\ c,\ \mbox{\hyperlink{my__qsort_8h_ae754523ea11b02dcc5731cd5e7a56416}{comp}}\ cmp);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00015}00015\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ swap(\textcolor{keywordtype}{void}\ *\ a,\ \textcolor{keywordtype}{void}\ *\ b,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00017}00017\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ *\ small\_sort(\textcolor{keywordtype}{void}\ *\ start,\ \textcolor{keywordtype}{void}\ *\ end,\ \textcolor{keywordtype}{size\_t}\ size,\ \mbox{\hyperlink{my__qsort_8h_ae754523ea11b02dcc5731cd5e7a56416}{comp}}\ cmp);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00019}00019\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_qsort(\textcolor{keywordtype}{void}*\ start,\ \textcolor{keywordtype}{void}*\ end,\ \textcolor{keywordtype}{size\_t}\ size,\ \mbox{\hyperlink{my__qsort_8h_ae754523ea11b02dcc5731cd5e7a56416}{comp}}\ cmp);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00021}00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{my__qsort_8h_aaf697c43f3433cd790477431b57ab6f2}{my\_qsort}}(\textcolor{keywordtype}{void}\ *\ ptr,\ \textcolor{keywordtype}{size\_t}\ count,\ \textcolor{keywordtype}{size\_t}\ size,\ \mbox{\hyperlink{my__qsort_8h_ae754523ea11b02dcc5731cd5e7a56416}{comp}}\ cmp);}
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{my__qsort_8h_source_l00025}00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MY\_Q\_SORT\_H}}
+
+\end{DoxyCode}

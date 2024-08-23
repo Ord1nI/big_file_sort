@@ -1,0 +1,53 @@
+\doxysection{main.\+c}
+\hypertarget{main_8c_source}{}\label{main_8c_source}\mbox{\hyperlink{main_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{big__file__sort_8h}{big\_file\_sort.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00003}\mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00003}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00005}00005\ \ \ \ \ \textcolor{comment}{//Read\ from\ file}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtext}{text}}\ \mbox{\hyperlink{structtext}{text}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}}\ \mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00010}00010\ \ \ \ \ FILE\ *\ f\ =\ fopen(\textcolor{stringliteral}{"{}hamlet.txt"{}},\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (!f)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ puts(\textcolor{stringliteral}{"{}File\ doesn't\ exit\ or\ error\ while\ opening\ it"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00016}00016\ \ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{structtext}{text}}.\mbox{\hyperlink{structtext_a37c4eb57634f8e0e8dcce090081f508a}{size}}\ =\ \mbox{\hyperlink{big__file__sort_8c_ac01ebf6e7eb978e788af2506a8edeaf0}{file\_len}}(\textcolor{stringliteral}{"{}hamlet.txt"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{structtext}{text}}.\mbox{\hyperlink{structtext_a7ea7e123d4baf6829dc10c764e61bedb}{text}}\ =\ malloc(\mbox{\hyperlink{structtext}{text}}.\mbox{\hyperlink{structtext_a37c4eb57634f8e0e8dcce090081f508a}{size}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00020}00020\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\mbox{\hyperlink{structtext}{text}}.\mbox{\hyperlink{structtext_a7ea7e123d4baf6829dc10c764e61bedb}{text}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}}.\mbox{\hyperlink{structtext__by__lines_a9d2f2f47b82849e20aa1a16f3d40c583}{lines}}\ =\ \mbox{\hyperlink{big__file__sort_8c_af5d56efdd10e3eb052a1e266056ac3f7}{read\_file}}(\&\mbox{\hyperlink{structtext}{text}},\ f);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}}.\mbox{\hyperlink{structtext__by__lines_a5d6d79259de2f1d470918f5b1d800f2d}{text\_by\_lines}}\ =\ (\textcolor{keywordtype}{char}**)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *)\ *\ \mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}}.\mbox{\hyperlink{structtext__by__lines_a9d2f2f47b82849e20aa1a16f3d40c583}{lines}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00025}00025\ \ \ \ \ fclose(f);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//Parse\ text\ to\ array\ of\ lines\ and}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//Delete\ empty\ lines}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//Update\ lines\ count}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}}.\mbox{\hyperlink{structtext__by__lines_a9d2f2f47b82849e20aa1a16f3d40c583}{lines}}\ =\ \mbox{\hyperlink{big__file__sort_8c_ae7169913dfa678097b2cf41e5c4302f8}{parse\_to\_lines}}(\&\mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}},\ \&\mbox{\hyperlink{structtext}{text}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//Sort\ by\ begining}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{my__qsort_8c_aaf697c43f3433cd790477431b57ab6f2}{my\_qsort}}(\mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}}.\mbox{\hyperlink{structtext__by__lines_a5d6d79259de2f1d470918f5b1d800f2d}{text\_by\_lines}},\ \mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}}.\mbox{\hyperlink{structtext__by__lines_a9d2f2f47b82849e20aa1a16f3d40c583}{lines}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}*),\ \mbox{\hyperlink{big__file__sort_8c_a78bcfc1df59b541eb0319bc15769f6f6}{str\_cmp\_by\_begining}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//Write\ to\ output\ file}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00036}00036\ \ \ \ \ FILE\ *\ out\ =\ fopen(\textcolor{stringliteral}{"{}Out.txt"{}},\textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{big__file__sort_8c_a82a257013c5aec53e752b0e73f55d87f}{write\_to\_file}}(\&\mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}},\ out);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//Sort\ by\ end}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{my__qsort_8c_aaf697c43f3433cd790477431b57ab6f2}{my\_qsort}}(\mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}}.\mbox{\hyperlink{structtext__by__lines_a5d6d79259de2f1d470918f5b1d800f2d}{text\_by\_lines}},\ \mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}}.\mbox{\hyperlink{structtext__by__lines_a9d2f2f47b82849e20aa1a16f3d40c583}{lines}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}*),\ \mbox{\hyperlink{big__file__sort_8c_aee5da476be472af99e571c6a304da73a}{str\_cmp\_by\_end}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{big__file__sort_8c_a82a257013c5aec53e752b0e73f55d87f}{write\_to\_file}}(\&\mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}},\ out);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00045}00045\ \ \ \ \ fclose(out);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00046}00046\ \ \ \ \ free(\mbox{\hyperlink{structtext__by__lines}{text\_by\_lines}}.\mbox{\hyperlink{structtext__by__lines_a5d6d79259de2f1d470918f5b1d800f2d}{text\_by\_lines}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00047}00047\ \ \ \ \ free(\mbox{\hyperlink{structtext}{text}}.\mbox{\hyperlink{structtext_a7ea7e123d4baf6829dc10c764e61bedb}{text}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00048}00048\ \}}
+
+\end{DoxyCode}

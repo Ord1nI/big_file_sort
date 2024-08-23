@@ -1,0 +1,105 @@
+\doxysection{big\+\_\+file\+\_\+sort.\+c File Reference}
+\hypertarget{big__file__sort_8c}{}\label{big__file__sort_8c}\index{big\_file\_sort.c@{big\_file\_sort.c}}
+{\ttfamily \#include "{}big\+\_\+file\+\_\+sort.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{big__file__sort_8c_a78bcfc1df59b541eb0319bc15769f6f6}{str\+\_\+cmp\+\_\+by\+\_\+begining}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Compare strings by the begining. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{big__file__sort_8c_aee5da476be472af99e571c6a304da73a}{str\+\_\+cmp\+\_\+by\+\_\+end}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Compare strings by the end. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{big__file__sort_8c_ae7169913dfa678097b2cf41e5c4302f8}{parse\+\_\+to\+\_\+lines}} (struct \mbox{\hyperlink{structtext__by__lines}{text\+\_\+by\+\_\+lines}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structtext__by__lines}{text\+\_\+by\+\_\+lines}}, struct \mbox{\hyperlink{structtext}{text}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structtext}{text}})
+\begin{DoxyCompactList}\small\item\em Parse text by lines. \end{DoxyCompactList}\item 
+off\+\_\+t \mbox{\hyperlink{big__file__sort_8c_ac01ebf6e7eb978e788af2506a8edeaf0}{file\+\_\+len}} (char \texorpdfstring{$\ast$}{*}file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Get file size. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{big__file__sort_8c_af5d56efdd10e3eb052a1e266056ac3f7}{read\+\_\+file}} (struct \mbox{\hyperlink{structtext}{text}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structtext}{text}}, FILE \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Reads content of file and return number of lines in file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{big__file__sort_8c_a82a257013c5aec53e752b0e73f55d87f}{write\+\_\+to\+\_\+file}} (struct \mbox{\hyperlink{structtext__by__lines}{text\+\_\+by\+\_\+lines}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structtext__by__lines}{text\+\_\+by\+\_\+lines}}, FILE \texorpdfstring{$\ast$}{*}out)
+\begin{DoxyCompactList}\small\item\em Writes text devided by lines to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{big__file__sort_8c_ac01ebf6e7eb978e788af2506a8edeaf0}\index{big\_file\_sort.c@{big\_file\_sort.c}!file\_len@{file\_len}}
+\index{file\_len@{file\_len}!big\_file\_sort.c@{big\_file\_sort.c}}
+\doxysubsubsection{\texorpdfstring{file\_len()}{file\_len()}}
+{\footnotesize\ttfamily \label{big__file__sort_8c_ac01ebf6e7eb978e788af2506a8edeaf0} 
+off\+\_\+t file\+\_\+len (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{file\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Get file size. 
+
+
+
+Definition at line \mbox{\hyperlink{big__file__sort_8c_source_l00085}{85}} of file \mbox{\hyperlink{big__file__sort_8c_source}{big\+\_\+file\+\_\+sort.\+c}}.
+
+\Hypertarget{big__file__sort_8c_ae7169913dfa678097b2cf41e5c4302f8}\index{big\_file\_sort.c@{big\_file\_sort.c}!parse\_to\_lines@{parse\_to\_lines}}
+\index{parse\_to\_lines@{parse\_to\_lines}!big\_file\_sort.c@{big\_file\_sort.c}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_lines()}{parse\_to\_lines()}}
+{\footnotesize\ttfamily \label{big__file__sort_8c_ae7169913dfa678097b2cf41e5c4302f8} 
+size\+\_\+t parse\+\_\+to\+\_\+lines (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtext__by__lines}{text\+\_\+by\+\_\+lines}} \texorpdfstring{$\ast$}{*}}]{text\+\_\+by\+\_\+lines}{, }\item[{struct \mbox{\hyperlink{structtext}{text}} \texorpdfstring{$\ast$}{*}}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Parse text by lines. 
+
+
+
+Definition at line \mbox{\hyperlink{big__file__sort_8c_source_l00070}{70}} of file \mbox{\hyperlink{big__file__sort_8c_source}{big\+\_\+file\+\_\+sort.\+c}}.
+
+\Hypertarget{big__file__sort_8c_af5d56efdd10e3eb052a1e266056ac3f7}\index{big\_file\_sort.c@{big\_file\_sort.c}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!big\_file\_sort.c@{big\_file\_sort.c}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}}
+{\footnotesize\ttfamily \label{big__file__sort_8c_af5d56efdd10e3eb052a1e266056ac3f7} 
+size\+\_\+t read\+\_\+file (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtext}{text}} \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Reads content of file and return number of lines in file. 
+
+
+
+Definition at line \mbox{\hyperlink{big__file__sort_8c_source_l00092}{92}} of file \mbox{\hyperlink{big__file__sort_8c_source}{big\+\_\+file\+\_\+sort.\+c}}.
+
+\Hypertarget{big__file__sort_8c_a78bcfc1df59b541eb0319bc15769f6f6}\index{big\_file\_sort.c@{big\_file\_sort.c}!str\_cmp\_by\_begining@{str\_cmp\_by\_begining}}
+\index{str\_cmp\_by\_begining@{str\_cmp\_by\_begining}!big\_file\_sort.c@{big\_file\_sort.c}}
+\doxysubsubsection{\texorpdfstring{str\_cmp\_by\_begining()}{str\_cmp\_by\_begining()}}
+{\footnotesize\ttfamily \label{big__file__sort_8c_a78bcfc1df59b541eb0319bc15769f6f6} 
+int str\+\_\+cmp\+\_\+by\+\_\+begining (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Compare strings by the begining. 
+
+
+
+Definition at line \mbox{\hyperlink{big__file__sort_8c_source_l00005}{5}} of file \mbox{\hyperlink{big__file__sort_8c_source}{big\+\_\+file\+\_\+sort.\+c}}.
+
+\Hypertarget{big__file__sort_8c_aee5da476be472af99e571c6a304da73a}\index{big\_file\_sort.c@{big\_file\_sort.c}!str\_cmp\_by\_end@{str\_cmp\_by\_end}}
+\index{str\_cmp\_by\_end@{str\_cmp\_by\_end}!big\_file\_sort.c@{big\_file\_sort.c}}
+\doxysubsubsection{\texorpdfstring{str\_cmp\_by\_end()}{str\_cmp\_by\_end()}}
+{\footnotesize\ttfamily \label{big__file__sort_8c_aee5da476be472af99e571c6a304da73a} 
+int str\+\_\+cmp\+\_\+by\+\_\+end (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Compare strings by the end. 
+
+
+
+Definition at line \mbox{\hyperlink{big__file__sort_8c_source_l00037}{37}} of file \mbox{\hyperlink{big__file__sort_8c_source}{big\+\_\+file\+\_\+sort.\+c}}.
+
+\Hypertarget{big__file__sort_8c_a82a257013c5aec53e752b0e73f55d87f}\index{big\_file\_sort.c@{big\_file\_sort.c}!write\_to\_file@{write\_to\_file}}
+\index{write\_to\_file@{write\_to\_file}!big\_file\_sort.c@{big\_file\_sort.c}}
+\doxysubsubsection{\texorpdfstring{write\_to\_file()}{write\_to\_file()}}
+{\footnotesize\ttfamily \label{big__file__sort_8c_a82a257013c5aec53e752b0e73f55d87f} 
+void write\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtext__by__lines}{text\+\_\+by\+\_\+lines}} \texorpdfstring{$\ast$}{*}}]{text\+\_\+by\+\_\+lines}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{out}{}\end{DoxyParamCaption})}
+
+
+
+Writes text devided by lines to file. 
+
+
+
+Definition at line \mbox{\hyperlink{big__file__sort_8c_source_l00109}{109}} of file \mbox{\hyperlink{big__file__sort_8c_source}{big\+\_\+file\+\_\+sort.\+c}}.
+
